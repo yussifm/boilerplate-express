@@ -9,18 +9,18 @@ app.get("/", function (req, res) {
 	res.sendFile(path.join(__dirname, "/views/index.html"));
 });
 
-
+if (process.env.MESSAGE_STYLE === "uppercase") {
+	response = "Hello World".toUpperCase();
+} else {
+	response = "Hello World";
+}
 
 app.get("/json", (req, res) => {
-	if (process.env.MESSAGE_STYLE === 'uppercase')
-{
-		{
-			res.json({
-				message: "HELLO JSON".toUpperCase(),
-			});
-		}
-}});
-
-
+	{
+		res.json({
+			message: response,
+		});
+	}
+});
 
 module.exports = app;
