@@ -14,7 +14,7 @@ var casel  = process.env.MESSAGE_STYLE;
 if (casel === "uppercase") {
 	respo = "Hello json".toUpperCase();
 } else {
-	respo = "Hello json".toUpperCase();
+	respo = "Hello json";
 }
 
 app.get("/json", (req, res) => {
