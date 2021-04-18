@@ -9,8 +9,9 @@ app.get("/", function (req, res) {
 	res.sendFile(path.join(__dirname, "/views/index.html"));
 });
 var respo;
+var casel  = process.env.MESSAGE_STYLE;
 
-if (process.env.MESSAGE_STYLE === "uppercase") {
+if (casel === "uppercase") {
 	respo = "Hello json".toUpperCase();
 } else {
 	respo = "Hello json".toUpperCase();
