@@ -8,17 +8,18 @@ app.use("/public", express.static(__dirname + "/public"));
 app.get("/", function (req, res) {
 	res.sendFile(path.join(__dirname, "/views/index.html"));
 });
+var respo;
 
-if (process.env.MESSAGE_STYLE == "uppercase") {
-	response = "Hello World".toUpperCase();
+if (process.env.MESSAGE_STYLE === "uppercase") {
+	respo = "Hello World".toUpperCase();
 } else {
-	response = "Hello World";
+	respo = "Hello World";
 }
 
 app.get("/json", (req, res) => {
 	{
 		res.json({
-			message: response,
+			message: respo,
 		});
 	}
 });
