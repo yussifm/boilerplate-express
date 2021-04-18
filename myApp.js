@@ -10,15 +10,17 @@ app.get("/", function (req, res) {
 });
 
 
-if (process.env.MESSAGE_STYLE === 'uppercase')
-{
-	
+
 app.get("/json", (req, res) => {
-	res.json({
-		message: "HELLO JSON".toUpperCase(),
-	});
-});
-}
+	if (process.env.MESSAGE_STYLE === 'uppercase')
+{
+		{
+			res.json({
+				message: "HELLO JSON".toUpperCase(),
+			});
+		}
+}});
+
 
 
 module.exports = app;
