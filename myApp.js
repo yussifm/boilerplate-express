@@ -9,7 +9,7 @@ app.get("/", function (req, res) {
 	res.sendFile(path.join(__dirname, "/views/index.html"));
 });
 
-if (process.envMESSAGE_STYLE == "uppercase") {
+if (process.env.MESSAGE_STYLE == "uppercase") {
 	response = "Hello World".toUpperCase();
 } else {
 	response = "Hello World";
